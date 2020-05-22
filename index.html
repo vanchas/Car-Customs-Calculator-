@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="calculator-wrapper">
+
+    <!-- КАЛЬКУЛЯТОР РАСТАМОЖКИ -->
+    <div class="customs-calculator row mx-0 my-5">
+      <h2 class="text-center col-12 bg-light pt-3 pb-4">КАЛЬКУЛЯТОР РАСТАМОЖКИ</h2>
+      <form class="form-group calculator-control col-lg-6 col-md-12">
+        <h5 class="text-center">Двигатель:</h5>
+        <div class="engine-buttons-group">
+          <label for="gasoline" class=" form-group label">
+            Бензин
+            <input type="radio" name="fuel" id="gasoline" value="gasoline" class="fuel">
+          </label>
+          <label for="diesel" class="form-group label">
+            Дизель
+            <input type="radio" name="fuel" id="diesel" value="diesel" class="fuel">
+          </label>
+          <label for="hybrid" class="form-group label">
+            Гибрид
+            <input type="radio" name="fuel" id="hybrid" value="hybrid" class="fuel">
+          </label>
+          <label for="electro" class="form-group label">
+            Электро
+            <input type="radio" name="fuel" id="electro" value="electro" class="fuel">
+          </label>
+        </div>
+
+        <h5 class="text-center pt-3">Аукцион:</h5>
+        <div class="auction-buttons-group">
+          <label for="copart" class="form-group label auction-label">
+            <img src="./images/customs/copart.png" class="w-100" alt="Copart">
+            <input type="radio" name="auction" id="copart" value="copart" class="auction">
+          </label>
+          <label for="iaai" class="form-group label auction-label">
+            <img src="./images/customs/AA.png" class="w-75 mx-auto" alt="IAAI">
+            <input type="radio" name="auction" id="iaai" value="iaai" class="auction">
+          </label>
+          <label for="manheim" class="form-group label auction-label">
+            <img src="./images/customs/manheim.png" class="w-100" alt="Manheim">
+            <input type="radio" name="auction" id="manheim" value="manheim" class="auction">
+          </label>
+        </div>
+
+        <div class="calc-inputs-group">
+          <label for="year" class="form-group text-center">Год выпуска:
+            <input type="text" name="year" id="year" class="form-control mt-1" placeholder="2016">
+          </label>
+          <label for="year" class="form-group text-center">Стоимость:
+            <input type="text" name="price" id="price" class="form-control mt-1" placeholder="$10000">
+          </label>
+          <label for="volume" class="form-group text-center">Объем ДВС / аккум-pa:
+            <input type="text" name="volume" id="volume" class="form-control mt-1" placeholder="л / кВтч">
+          </label>
+        </div>
+      </form>
+
+      <div class="car-images-show col-lg-6 col-md-12 py-3">
+        <img src="./images/customs/american.png" alt="car" class="w-100 big-car-image">
+      </div>
+
+      <div class="display col-12 p-0">
+        <div class="display-item px-3">
+          <span>Стоимость лота:</span>
+          <span class="price-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Сборы аукциона:</span>
+          <span class="auction-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Акциз:</span>
+          <span class="excise-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Пошлина:</span>
+          <span class="duty-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>НДС:</span>
+          <span class="nds-display">$0</span>
+        </div>
+        <div class="font-weight-bold display-item px-3 display-item-last text-center col-12 bg-light pt-3 pb-4">
+          <span>Сумма таможенных платежей:</span>
+          <span class="customs-sum-display">$0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- КАЛЬКУЛЯТОР ДОСТАВКИ -->
+    <div class="delivery-calculator">
+      <h2 class="text-center col-12 bg-light pt-3 pb-4 my-4">КАЛЬКУЛЯТОР ДОСТАВКИ</h2>
+      <form class="from-group delivery-calculator-form">
+        <div>
+          <h5 class="text-center">Кузов:</h5>
+          <div class="categories-buttons-group">
+            <label class="form-group label">
+              I категория <br> седан <br> хетчбек <br> универсал
+              <input type="radio" name="category" id="first" class="category">
+            </label>
+            <label class="form-group label">
+              II категория <br> кроссовер <br> внедорожник <br> минивен
+              <input type="radio" name="category" id="second" class="category">
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="text-center">Штат аукциона:</h5>
+          <div class="usa-states-block">
+            <select class="form-control select-local-state">
+              <option value="undef">Выберите штат</option>
+              <option value="CA">California</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="NJ">New Jersey</option>
+              <option value="TX">Texas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="delivery-ports py-3">
+          <h5 class="text-center">Порт доставки:</h5>
+          <div class="port">
+            <img src="./images/delivery/ukraine.svg" alt="Украина" class="w-100 port-image" data="ukr">
+            <p>Украина <br> (Одесса)</p>
+          </div>
+          <div class="port">
+            <img src="./images/delivery/lithuania.png" alt="Литва" class="w-100 port-image" data="lit">
+            <p>Литва <br> (Клайпеда)</p>
+          </div>
+        </div>
+
+        <div class="">
+          <img src="./images/delivery/zagl.png" alt="" class="w-100">
+        </div>
+
+        <div class="display display-delivery">
+          <!-- <div class="display-item px-3">
+          <span>Доставка по Америке</span>
+          <span class="usa-delivery-display">$0</span>
+        </div> -->
+          <div class="display-item px-3">
+            <span>Доставка в порт назначения</span>
+            <span class="port-delivery-display">$0</span>
+          </div>
+          <div class="display-item px-3">
+            <span>Отправка международной почты</span>
+            <span class="post-delivery-display">$0</span>
+          </div>
+          <div class="display-item px-3">
+            <span>Брокер</span>
+            <span class="broker-display">$0</span>
+          </div>
+          <div class="font-weight-bold display-item px-3 display-item-last text-center bg-light pt-3 pb-4">
+            <span>Стоимость доставки</span>
+            <span class="delivery-sum-display">$0</span>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- ОБЩАЯ CУММА -->
+    <div class="result-block my-5">
+      <h2 class="text-center col-12 bg-light pt-3 pb-4 my-5">ОБЩАЯ CУММА</h2>
+      <div class="display display-delivery">
+        <div class="display-item px-3">
+          <span>Стоимость лота</span>
+          <span class="price-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Сборы аукциона</span>
+          <span class="auction-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Стоимость растаможки</span>
+          <span class="customs-sum-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Стоимость страхования</span>
+          <span class="insurance-display">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Стоимость доставки</span>
+          <span class="delivery-sum-display">$0</span>
+        </div>
+        <!-- <div class="display-item px-3 font-weight-bold text-muted">
+          Услуги:
+        </div> -->
+        <div class="display-item px-3">
+          <span>Услугa Cтандарт (выигрываем и привозим)</span>
+          <span class="standard">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Услугa Cтандарт+ (выигрываем, привозим и ремонтируем)</span>
+          <span class="standardPlus">$0</span>
+        </div>
+        <div class="display-item px-3">
+          <span>Услугa Эксперт и дилер (для оптовых покупателей)</span>
+          <span class="expert">$0</span>
+        </div>
+        <div class="font-weight-bold display-item px-3 display-item-last text-center bg-light pt-3 pb-4">
+          <span>Итоговая стоимость со всем платежами (пакет: 'Стандарт')</span>
+          <span class="total-sum-display">$0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

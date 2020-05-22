@@ -1,0 +1,169 @@
+.calculator-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 .5em;
+}
+
+/* customs block */
+.customs-calculator {
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.calc-inputs-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4%;
+  align-items: end;
+  line-height: 1.2em;
+}
+.engine-buttons-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 5%;
+}
+.auction-buttons-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 5%;
+}
+@media screen and (max-width: 768px) {
+  .calc-inputs-group {
+    padding-top: 4em;
+    grid-template-columns: 1fr;
+  }
+	.auction-buttons-group {
+		grid-template-columns: 1fr;
+	}
+	.engine-buttons-group {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.label {
+	border-radius: .1em;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	padding: .3em 1em;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	background-color: #fff;
+}
+.label input {
+	visibility: hidden;
+}
+.label img {
+  transform: translateY(.3em);
+}
+.label.active {
+	box-shadow: inset 0 2px 4px rgba(0, 1, 5, 0.3);
+	background-color: #e8e8e8;
+	color: #b8a884;
+}
+.car-images-show {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+}
+.display {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.display-item {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: space-between;
+	border-bottom: 1px solid #eee;
+	padding: .5em 0;
+}
+.display-item-last {
+	grid-column: span 2;
+}
+@media screen and (max-width: 768px) {
+	.auction-label {
+		min-height: 10em;
+	}
+	.display {
+		grid-template-columns: 1fr;
+  }
+  .display-item-last {
+    grid-column: span 1;
+  }
+}
+
+/* delivery block */
+.delivery-calculator {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.delivery-calculator-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.delivery-calculator h2 {
+  grid-column: span 2;
+}
+.categories-buttons-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5%;
+  padding: 0 1em;
+}
+.delivery-ports {
+  padding: 0 .7em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.delivery-ports h5 {
+  grid-column: span 2;
+}
+.display-delivery {
+  grid-column: span 2;
+}
+.usa-states-block {
+  padding: 0 1em;
+}
+.select-local-state {
+  display: block !important;
+  /* display: none !important; */
+}
+.usa-map-svg {
+  display: none !important;
+}
+.state:hover {
+  transition: .1s;
+  opacity: .6;
+}
+.port-image {
+  opacity: .6;
+}
+.port-image.active {
+  opacity: 1;
+}
+.port-image:hover {
+  opacity: 1;
+}
+
+/* result-block */
+.result-block {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .delivery-calculator-form {
+    grid-template-columns: 1fr !important;
+  }
+  .delivery-calculator h2 {
+    grid-column: span 1;
+  }
+  .display-delivery {
+    grid-column: span 1;
+  }
+  .select-local-state {
+    display: block !important;
+  }
+  .usa-map-svg {
+    display: none !important;
+  }
+  .delivery-ports .port p {
+    text-align: center;
+  }
+}
