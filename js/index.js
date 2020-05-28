@@ -1,8 +1,318 @@
+const states = [
+  {
+    "Code_state": "AL",
+    "Name_state": "Alabama",
+    "Price_port": "475",
+    "Port": "SAV"
+  },
+  {
+    "Code_state": "AK",
+    "Name_state": "Alaska",
+    "Price_port": "1500",
+    "Port": "SEA"
+  },
+  {
+    "Code_state": "AZ",
+    "Name_state": "Arizona",
+    "Price_port": "400",
+    "Port": "LA"
+  },
+  {
+    "Code_state": "AR",
+    "Name_state": "Arkansas",
+    "Price_port": "650",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "CA",
+    "Name_state": "California",
+    "Price_port": "350",
+    "Port": "LA"
+  },
+  {
+    "Code_state": "CO",
+    "Name_state": "Colorado",
+    "Price_port": "650",
+    "Port": "LA"
+  },
+  {
+    "Code_state": "CT",
+    "Name_state": "Connecticut",
+    "Price_port": "350",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "DE",
+    "Name_state": "Delaware",
+    "Price_port": "450",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "FL",
+    "Name_state": "Florida",
+    "Price_port": "250",
+    "Port": "MIA"
+  },
+  {
+    "Code_state": "GA",
+    "Name_state": "Georgia",
+    "Price_port": "350",
+    "Port": "SAV"
+  },
+  {
+    "Code_state": "HI",
+    "Name_state": "Hawaii",
+    "Price_port": "1600",
+    "Port": "LA"
+  },
+  {
+    "Code_state": "ID",
+    "Name_state": "Idaho",
+    "Price_port": "500",
+    "Port": "SEA"
+  },
+  {
+    "Code_state": "IL",
+    "Name_state": "Illinois",
+    "Price_port": "275",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "IN",
+    "Name_state": "Indiana",
+    "Price_port": "350",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "IA",
+    "Name_state": "Iowa",
+    "Price_port": "450",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "KS",
+    "Name_state": "Kansas",
+    "Price_port": "475",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "KY",
+    "Name_state": "Kentucky",
+    "Price_port": "475",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "LA",
+    "Name_state": "Louisiana",
+    "Price_port": "475",
+    "Port": "HOU"
+  },
+  {
+    "Code_state": "ME",
+    "Name_state": "Maine",
+    "Price_port": "550",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "MD",
+    "Name_state": "Maryland",
+    "Price_port": "400",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "MA",
+    "Name_state": "Massachusetts",
+    "Price_port": "475",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "MI",
+    "Name_state": "Michigan",
+    "Price_port": "450",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "MN",
+    "Name_state": "Minnesota",
+    "Price_port": "425",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "MS",
+    "Name_state": "Mississippi",
+    "Price_port": "500",
+    "Port": "HOU"
+  },
+  {
+    "Code_state": "MO",
+    "Name_state": "Missouri",
+    "Price_port": "400",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "MT",
+    "Name_state": "Montana",
+    "Price_port": "850",
+    "Port": "SEA"
+  },
+  {
+    "Code_state": "NE",
+    "Name_state": "Nebraska",
+    "Price_port": "550",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "NV",
+    "Name_state": "Nevada",
+    "Price_port": "450",
+    "Port": "LA"
+  },
+  {
+    "Code_state": "NH",
+    "Name_state": "New Hampshire",
+    "Price_port": "525",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "NJ",
+    "Name_state": "New Jersey",
+    "Price_port": "225",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "NM",
+    "Name_state": "New Mexico",
+    "Price_port": "600",
+    "Port": "HOU"
+  },
+  {
+    "Code_state": "NY",
+    "Name_state": "New York",
+    "Price_port": "400",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "NC",
+    "Name_state": "North Carolina",
+    "Price_port": "425",
+    "Port": "SAV"
+  },
+  {
+    "Code_state": "ND",
+    "Name_state": "North Dakota",
+    "Price_port": "550",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "OH",
+    "Name_state": "Ohio",
+    "Price_port": "525",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "OK",
+    "Name_state": "Oklahoma",
+    "Price_port": "500",
+    "Port": "HOU"
+  },
+  {
+    "Code_state": "OR",
+    "Name_state": "Oregon",
+    "Price_port": "325",
+    "Port": "SEA"
+  },
+  {
+    "Code_state": "PA",
+    "Name_state": "Pennsylvania",
+    "Price_port": "475",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "RI",
+    "Name_state": "Rhode Island",
+    "Price_port": "450",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "SC",
+    "Name_state": "South Carolina",
+    "Price_port": "375",
+    "Port": "SAV"
+  },
+  {
+    "Code_state": "SD",
+    "Name_state": "South Dakota",
+    "Price_port": "550",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "TN",
+    "Name_state": "Tennessee",
+    "Price_port": "475",
+    "Port": "SAV"
+  },
+  {
+    "Code_state": "TX",
+    "Name_state": "Texas",
+    "Price_port": "300",
+    "Port": "HOU"
+  },
+  {
+    "Code_state": "UT",
+    "Name_state": "Utah",
+    "Price_port": "550",
+    "Port": "LA"
+  },
+  {
+    "Code_state": "VT",
+    "Name_state": "Vermont",
+    "Price_port": "450",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "VA",
+    "Name_state": "Virginia",
+    "Price_port": "500",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "WA",
+    "Name_state": "Washington",
+    "Price_port": "250",
+    "Port": "SEA"
+  },
+  {
+    "Code_state": "WV",
+    "Name_state": "West Virginia",
+    "Price_port": "550",
+    "Port": "NY"
+  },
+  {
+    "Code_state": "WI",
+    "Name_state": "Wisconsin",
+    "Price_port": "300",
+    "Port": "CHI"
+  },
+  {
+    "Code_state": "WY",
+    "Name_state": "Wyoming",
+    "Price_port": "600",
+    "Port": "LA"
+  },
+  {
+    "Code_state": "DC",
+    "Name_state": "Washington",
+    "Price_port": "400",
+    "Port": "NY"
+  }
+];
+
 const gasolineUrl = './images/customs/mercedes.png';
 const dieselUrl = './images/customs/cruiser.png';
 const hybridUrl = './images/customs/toyota.png';
 const electroUrl = './images/customs/nissan.jpg';
 const allCarsUrl = './images/customs/american.png';
+
 
 let fuel = '';
 let auction = 'iaai';
@@ -22,70 +332,76 @@ let ageCoefficient = 0;
 let state = 'FL';
 let port = 'lit';
 let category = 1;
+let landState = '';
 
 let customsPrice = 0;
 let deliveryPrice = 0;
 let portDeliveryPrice = 0;
-let postDeliveryPrice = 0;
 let insurancePrice = carPrice * 0.009;
+let landDeliveryPrice = 0;
 
 let standard = 500;
 let standardPlus = 600;
 let expert = 300;
+let service = 0;
 
 function deliveryPriceCount() {
   if (carPrice > 0) {
-    postDeliveryPrice = 75;
     if (port === 'ukr') {
       if (state === 'NJ') {
-        portDeliveryPrice = 700;
+        portDeliveryPrice = 700 + 450;
         if (category === 1) deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 700 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'GA') {
-        portDeliveryPrice = 700;
+        portDeliveryPrice = 700 + 450;
         if (category === 1) deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 700 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'FL') {
-        portDeliveryPrice = 730;
+        portDeliveryPrice = 730 + 450;
         if (category === 1) deliveryPrice = 730 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 730 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'TX') {
-        portDeliveryPrice = 750;
+        portDeliveryPrice = 750 + 450;
         if (category === 1) deliveryPrice = 750 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 750 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'CA') {
-        portDeliveryPrice = 975;
+        portDeliveryPrice = 975 + 450;
         if (category === 1) deliveryPrice = 975 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 975 + 300 + 100 + carPrice * 0.009;
       }
     } else {
       if (state === 'NJ') {
-        portDeliveryPrice = 600;
+        portDeliveryPrice = 600 + 250;
         if (category === 1) deliveryPrice = 600 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 600 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'GA') {
-        portDeliveryPrice = 600;
+        portDeliveryPrice = 600 + 250;
         if (category === 1) deliveryPrice = 600 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 600 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'FL') {
-        portDeliveryPrice = 700;
+        portDeliveryPrice = 700 + 250;
         if (category === 1) deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 700 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'TX') {
-        portDeliveryPrice = 675;
+        portDeliveryPrice = 675 + 250;
         if (category === 1) deliveryPrice = 675 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 675 + 300 + 100 + carPrice * 0.009;
       } else if (state === 'CA') {
-        portDeliveryPrice = 925;
+        portDeliveryPrice = 925 + 250;
         if (category === 1) deliveryPrice = 925 + 300 + 100 + carPrice * 0.009;
         if (category === 2) deliveryPrice = 50 + 925 + 300 + 100 + carPrice * 0.009;
       }
     }
   }
 }
+$('.big-car-image').css('padding', '3em 0');
 function handleFuelChanges() {
   if (fuel === 'gasoline') {
-    $('.big-car-image').attr('src', gasolineUrl);
+    $('.big-car-image').fadeOut(300, function () {
+      $('.big-car-image').attr('src', gasolineUrl).fadeIn(300);
+      $('.big-car-image').css('padding', '0 3em');
+    });
+
     dutyPrice = +carPrice * 0.1;
     if (+carVolume * 1000 <= 3000) {
       baseRate = 50;
@@ -99,7 +415,11 @@ function handleFuelChanges() {
       customsPrice = +excisePrice + +dutyPrice + +ndsPrice;
     }
   } else if (fuel === 'diesel') {
-    $('.big-car-image').attr('src', dieselUrl);
+    $('.big-car-image').fadeOut(300, function () {
+      $('.big-car-image').attr('src', dieselUrl).fadeIn(300);
+      $('.big-car-image').css('padding', '1em 0');
+    });
+
     dutyPrice = +carPrice * 0.1;
     if (+carVolume * 1000 <= 3500) {
       baseRate = 75;
@@ -114,7 +434,11 @@ function handleFuelChanges() {
 
     }
   } else if (fuel === 'hybrid') {
-    $('.big-car-image').attr('src', hybridUrl);
+    $('.big-car-image').fadeOut(300, function () {
+      $('.big-car-image').attr('src', hybridUrl).fadeIn(300);
+      $('.big-car-image').css('padding', '0 3em');
+    });
+
     dutyPrice = +carPrice * 0.1;
     if (+carVolume * 1000 <= 3000) {
       baseRate = 50;
@@ -128,7 +452,11 @@ function handleFuelChanges() {
       customsPrice = +excisePrice + +dutyPrice + +ndsPrice;
     }
   } else if (fuel === 'electro') {
-    $('.big-car-image').attr('src', electroUrl);
+    $('.big-car-image').fadeOut(300, function () {
+      $('.big-car-image').attr('src', electroUrl).fadeIn(300);
+      $('.big-car-image').css('padding', '0 3em');
+    });
+
     baseRate = 50;
     dutyPrice = 0;
     excisePrice = +carVolume * 1.08;
@@ -305,19 +633,28 @@ $('#price').on('input', e => {
     ndsPrice = (+e.target.value + +excisePrice + +dutyPrice) * 0.2;
     insurancePrice = +e.target.value * 0.009;
     customsPrice = +excisePrice + +dutyPrice + +ndsPrice;
+    $('#standard').attr('checked', 'checked');
+    service = 500;
     res();
   }).then(() => countAuctionPrice())
     .then(() => deliveryPriceCount())
     .then(() => updateDocumentValues())
 });
 $('#volume').on('input', e => {
+  let value;
+
   new Promise(res => {
-    carVolume = +e.target.value;
-    engineCoefficient = +e.target.value;
+    (e.target.value.split(',').length > 1)
+      ? value = +e.target.value.split(',').join('.')
+      : value = +e.target.value;
+
+    res();
+  }).then(() => {
+    carVolume = +value;
+    engineCoefficient = +value;
     excisePrice = baseRate * +engineCoefficient * +ageCoefficient;
     ndsPrice = (+carPrice + +excisePrice + +dutyPrice) * 0.2;
     customsPrice = +excisePrice + +dutyPrice + +ndsPrice;
-    res();
   }).then(() => handleFuelChanges())
     .then(() => updateDocumentValues())
 });
@@ -383,6 +720,45 @@ $('.select-local-state').on('change', e => {
   }).then(() => deliveryPriceCount())
     .then(() => updateDocumentValues())
 });
+$('.service').on('change', e => {
+  new Promise(res => {
+    service = +e.target.value;
+    res();
+  }).then(() => updateDocumentValues());
+});
+$('.state').on('click', e => {
+  for (let node of $('.hover-map')) {
+    if ($(node).not(e.target).hasClass('state-active')) {
+      $(node).removeClass('state-active');
+    }
+  }
+  $(e.target).addClass('state-active');
+
+  new Promise(res => {
+    const value = e.target.classList[0].split('--')[1].toLowerCase();
+    res(value);
+  }).then(value => {
+    states.forEach(s => {
+      if (s.Code_state.toLowerCase() === value) {
+        landDeliveryPrice = +s.Price_port;
+      }
+    });
+  }).then(() => updateDocumentValues())
+    .catch(err => console.log(err));
+});
+$('.map-select').on('change', e => {
+  new Promise(res => {
+    const value = e.target.value.split('--')[1].toLowerCase();
+    res();
+  }).then(value => {
+    states.forEach(s => {
+      if (s.Code_state.toLowerCase() === value) {
+        landDeliveryPrice = +s.Price_port;
+      }
+    });
+  }).then(() => updateDocumentValues())
+    .catch(err => console.log(err));
+});
 
 function updateDocumentValues() {
   $('.price-display').text(`$${carPrice}`);
@@ -390,14 +766,14 @@ function updateDocumentValues() {
   $('.excise-display').text(`$${Math.round(excisePrice)}`);
   $('.duty-display').text(`$${Math.round(dutyPrice)}`);
   $('.nds-display').text(`$${Math.round(ndsPrice)}`);
-  $('.customs-sum-display').text(`$${Math.round(customsPrice)}`);
+  $('.customs-sum-display').text(`$${Math.round(customsPrice + 400)}`);
   $('.insurance-display').text(`$${insurancePrice.toFixed(2)}`);
   $('.broker-display').text(`$${200}`);
-  $('.delivery-sum-display').text(`$${Math.round(deliveryPrice)}`);
+  $('.delivery-sum-display').text(`$${Math.round(deliveryPrice + landDeliveryPrice)}`);
   $('.port-delivery-display').text(`$${Math.round(portDeliveryPrice)}`);
-  $('.post-delivery-display').text(`$${Math.round(postDeliveryPrice)}`);
+  $('.land-delivery-display').text(`$${landDeliveryPrice}`);
   $('.standard').text(`$${standard}`);
   $('.standardPlus').text(`$${standardPlus}`);
   $('.expert').text(`$${expert}`);
-  $('.total-sum-display').text(`$${+carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + deliveryPrice}`);
+  $('.total-sum-display').text(`$${+carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +deliveryPrice + +service + +landDeliveryPrice  + 400}`);
 }
