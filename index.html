@@ -126,7 +126,19 @@
           <h5 class="text-center">Морской фрахт:</h5>
           <div class="usa-states-block">
             <select class="form-control select-local-state">
-              <option value="undef">Выберите штат</option>
+              <option value="default" hidden>Выберите штат</option>
+              <option value="CA">California</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="NJ">New Jersey</option>
+              <option value="TX">Texas</option>
+            </select>
+          </div>
+
+          <h5 class="text-center">Город отправки:</h5>
+          <div class="usa-cities-block">
+            <select class="form-control select-local-city">
+              <option value="default" hidden>Выберите штат</option>
               <option value="CA">California</option>
               <option value="FL">Florida</option>
               <option value="GA">Georgia</option>
@@ -749,7 +761,7 @@
 
           <!-- SELECT EXTENDS MAP IN MOBILE VERSION -->
           <select class="map-select form-control">
-            <option value="undef">Выберите штат</option>
+            <option value="default" hidden>Выберите штат</option>
             <option value="outline--AL">Alabama</option>
             <option value="outline--AK">Alaska</option>
             <option value="outline--AZ">Arizona</option>

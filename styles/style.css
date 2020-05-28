@@ -166,7 +166,7 @@ label .input {
 	position: absolute;
 	height: 2em;
 	width: 2em;
-	content: '';
+	content: "";
 	background-color: #fff;
 	top: 60%;
 	right: 0;
@@ -185,10 +185,12 @@ label .input {
 .display-delivery {
 	grid-column: span 2;
 }
-.usa-states-block {
+.usa-states-block,
+.usa-cities-block {
 	padding: 0 1em;
 }
-.select-local-state {
+.select-local-state,
+.select-local-city {
 	margin: 1em 0;
 }
 .state:hover {
