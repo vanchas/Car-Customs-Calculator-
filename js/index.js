@@ -766,14 +766,30 @@ function updateDocumentValues() {
   $('.excise-display').text(`$${Math.round(excisePrice)}`);
   $('.duty-display').text(`$${Math.round(dutyPrice)}`);
   $('.nds-display').text(`$${Math.round(ndsPrice)}`);
-  $('.customs-sum-display').text(`$${Math.round(customsPrice + 400)}`);
-  $('.insurance-display').text(`$${insurancePrice.toFixed(2)}`);
-  $('.broker-display').text(`$${200}`);
-  $('.delivery-sum-display').text(`$${Math.round(deliveryPrice + landDeliveryPrice)}`);
+  $('.customs-sum-display').text(`$${Math.round(customsPrice)}`);
+
+  $('.broker-display').text(`$${400 + 200}`);
+  // $('.delivery-sum-display').text(`$${Math.round(deliveryPrice + landDeliveryPrice)}`);
+  $('.delivery-sum-display').text(`$${Math.round(portDeliveryPrice + landDeliveryPrice + 200 + 400)}`);
   $('.port-delivery-display').text(`$${Math.round(portDeliveryPrice)}`);
   $('.land-delivery-display').text(`$${landDeliveryPrice}`);
+
+  $('.insurance-display').text(`$${insurancePrice.toFixed(2)}`);
   $('.standard').text(`$${standard}`);
   $('.standardPlus').text(`$${standardPlus}`);
   $('.expert').text(`$${expert}`);
-  $('.total-sum-display').text(`$${+carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +deliveryPrice + +service + +landDeliveryPrice  + 400}`);
+  $('.total-sum-display').text(`$${+carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +portDeliveryPrice + +landDeliveryPrice + 200 + 400 + +service}`);
+
+  console.log('=== CUSTOMS ===');
+  console.log('insurancePrice:', insurancePrice);
+  console.log('auctionPrice:', auctionPrice);
+  console.log('excisePrice:', excisePrice);
+  console.log('dutyPrice:', dutyPrice);
+  console.log('ndsPrice:', ndsPrice);
+  console.log('customsPrice:', customsPrice);
+  console.log('=== DELIVERY ===');
+  console.log('landDeliveryPrice:', landDeliveryPrice);
+  console.log('deliveryPrice:', deliveryPrice);
+  console.log('portDeliveryPrice:', portDeliveryPrice);
+  console.log('Итоговая стоимость со всем платежами:', +carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +portDeliveryPrice + +landDeliveryPrice + 200 + 400 + +service);
 }

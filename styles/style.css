@@ -82,6 +82,21 @@ label .input {
 	justify-items: center;
 	justify-content: center;
 }
+@media screen and (max-width: 768px) {
+	.car-images-show {
+		height: 23em;
+	}
+}
+@media screen and (max-width: 600px) {
+	.car-images-show {
+		height: 20em;
+	}
+}
+@media screen and (max-width: 500px) {
+	.car-images-show {
+		height: 16em;
+	}
+}
 .display {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
