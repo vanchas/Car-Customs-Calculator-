@@ -1,3 +1,7 @@
+body {
+	background-color: rgb(240, 240, 240, 0.75) !important;
+}
+
 .calculator-wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -11,8 +15,8 @@
 
 /* customs block */
 .customs-calculator {
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-	background-color: #fff;
+	box-shadow: 5px 15px 15px #bfbfbf, -10px -20px 15px #e6e3e3;
+	background: #fff;
 	z-index: 1;
 }
 .calc-inputs-group {
@@ -52,6 +56,7 @@
 	}
 }
 .label {
+	background-color: #fafafa;
 	cursor: pointer;
 	border-radius: 0.2em;
 	display: grid;
@@ -65,7 +70,6 @@
 	visibility: hidden;
 }
 label .input {
-	background-color: rgba(255, 255, 255, 0.8);
 	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(0, 0, 0, 0.05);
 }
 .label img {
@@ -74,7 +78,6 @@ label .input {
 .label.active {
 	box-shadow: inset 0 2px 4px rgba(0, 1, 5, 0.3);
 	background-color: #e8e8e8;
-	/* color: #b8a884; */
 	color: #4da7df;
 }
 .car-images-show {
@@ -82,6 +85,9 @@ label .input {
 	align-items: center;
 	justify-items: center;
 	justify-content: center;
+}
+.cont {
+	width: 50%;
 }
 @media screen and (max-width: 768px) {
 	.car-images-show {
@@ -106,7 +112,7 @@ label .input {
 	display: grid;
 	grid-auto-flow: column;
 	justify-content: space-between;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px dashed #999;
 	padding: 1em 0;
 }
 .display-item-last {
@@ -130,8 +136,8 @@ label .input {
 
 /* delivery block */
 .delivery-calculator {
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-	background-color: #fff;
+	box-shadow: 8px 16px 16px rgba(136, 165, 191, 0.6), -8px -4px 16px rgba(255, 255, 255, 0.9);
+	background:#fff;
 	z-index: 1;
 }
 .delivery-calculator-form {
@@ -148,28 +154,18 @@ label .input {
 	grid-gap: 5%;
 	padding: 0 1em;
 }
-.map {
-	width: 100%;
-}
-.map .svg {
-	width: 100%;
-	display: block;
-	padding: 2em 0;
-}
-.map-select {
-	display: none !important;
-}
 #lithuania {
 	position: relative;
 }
 #lithuania::after {
 	position: absolute;
-	height: 2em;
-	width: 2em;
+	height: 3em;
+	width: 3em;
 	content: "";
+	border-radius: 1em;
 	background-color: #fff;
-	top: 60%;
-	right: 0;
+	top: 65%;
+	right: .5em;
 	z-index: 999;
 	display: block;
 }
@@ -185,12 +181,15 @@ label .input {
 .display-delivery {
 	grid-column: span 2;
 }
-.usa-states-block,
-.usa-cities-block {
-	padding: 0 1em;
+.cont {
+	opacity: 0.9;
 }
-.select-local-state,
-.select-local-city {
+.map {
+	padding: 0 1em;
+	width: 100%;
+}
+.select-local-city,
+.map-select {
 	margin: 1em 0;
 }
 .state:hover {
@@ -213,9 +212,9 @@ label .input {
 
 /* result-block */
 .result-block {
-	background-color: #fff;
+	box-shadow: 8px 16px 16px rgba(136, 165, 191, 0.6), -8px -4px 16px rgba(255, 255, 255, 0.9);
+	background: #fff;
 	z-index: 1;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 768px) {
@@ -228,18 +227,8 @@ label .input {
 	.display-delivery {
 		grid-column: span 1;
 	}
-	.map-select {
-		margin: 1em 0;
-		display: block !important;
-	}
 	.map {
 		padding: 0 1em;
-	}
-	.map .svg {
-		display: none;
-	}
-	.map-select {
-		display: none;
 	}
 	.delivery-ports .port p {
 		text-align: center;

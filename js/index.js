@@ -1389,7 +1389,8 @@ const dieselUrl = './images/customs/cruiser.png';
 const hybridUrl = './images/customs/toyota.png';
 const electroUrl = './images/customs/nissan.jpg';
 const allCarsUrl = './images/customs/american.png';
-
+const cont1 = './images/delivery/cont.png';
+const cont2 = './images/delivery/cont2.jpg';
 
 let fuel = '';
 let auction = 'iaai';
@@ -1409,6 +1410,7 @@ let ageCoefficient = 0;
 let state = 'FL';
 let port = 'lit';
 let category = 1;
+let categoryPrice = 0;
 let landState = '';
 
 let customsPrice = 0;
@@ -1422,51 +1424,44 @@ let standardPlus = 600;
 let expert = 300;
 let service = 0;
 
+let cityPrice = 0;
+
+
 function deliveryPriceCount() {
   if (carPrice > 0) {
     if (port === 'ukr') {
-      if (state === 'NJ') {
+      if (state.toUpperCase() === 'NJ') {
         portDeliveryPrice = 700 + 450;
-        if (category === 1) deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 700 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'GA') {
+        deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'GA') {
         portDeliveryPrice = 700 + 450;
-        if (category === 1) deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 700 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'FL') {
+        deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'FL') {
         portDeliveryPrice = 730 + 450;
-        if (category === 1) deliveryPrice = 730 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 730 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'TX') {
+        deliveryPrice = 730 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'TX') {
         portDeliveryPrice = 750 + 450;
-        if (category === 1) deliveryPrice = 750 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 750 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'CA') {
+        deliveryPrice = 750 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'CA') {
         portDeliveryPrice = 975 + 450;
-        if (category === 1) deliveryPrice = 975 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 975 + 300 + 100 + carPrice * 0.009;
+        deliveryPrice = 975 + 300 + 100 + carPrice * 0.009;
       }
     } else {
-      if (state === 'NJ') {
+      if (state.toUpperCase() === 'NJ') {
         portDeliveryPrice = 600 + 250;
-        if (category === 1) deliveryPrice = 600 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 600 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'GA') {
+        deliveryPrice = 600 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'GA') {
         portDeliveryPrice = 600 + 250;
-        if (category === 1) deliveryPrice = 600 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 600 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'FL') {
+        deliveryPrice = 600 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'FL') {
         portDeliveryPrice = 700 + 250;
-        if (category === 1) deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 700 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'TX') {
+        deliveryPrice = 700 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'TX') {
         portDeliveryPrice = 675 + 250;
-        if (category === 1) deliveryPrice = 675 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 675 + 300 + 100 + carPrice * 0.009;
-      } else if (state === 'CA') {
+        deliveryPrice = 675 + 300 + 100 + carPrice * 0.009;
+      } else if (state.toUpperCase() === 'CA') {
         portDeliveryPrice = 925 + 250;
-        if (category === 1) deliveryPrice = 925 + 300 + 100 + carPrice * 0.009;
-        if (category === 2) deliveryPrice = 50 + 925 + 300 + 100 + carPrice * 0.009;
+        deliveryPrice = 925 + 300 + 100 + carPrice * 0.009;
       }
     }
   }
@@ -1778,8 +1773,24 @@ $('.port img').on('click', e => {
 });
 $('.category').on('change', e => {
   new Promise(res => {
-    if ($(e.target).attr('id') === 'first') category = 1;
-    if ($(e.target).attr('id') === 'second') category = 2;
+    if ($(e.target).attr('id') === 'first') {
+      category = 1;
+      categoryPrice = 0;
+      $('.cont').fadeOut(300, function () {
+        $('.cont').attr('src', cont1).fadeIn(300);
+        $('.cont').css('width', '50%');
+        $('.cont').css('transform', 'scaleX(1)');
+      });
+    };
+    if ($(e.target).attr('id') === 'second') {
+      category = 2;
+      categoryPrice = 50;
+      $('.cont').fadeOut(300, function () {
+        $('.cont').attr('src', cont2).fadeIn(300);
+        $('.cont').css('width', '80%');
+        $('.cont').css('transform', 'scaleX(-1)');
+      });
+    };
     for (let node of $('.category')) {
       if ($(node).not(e.target).parent().hasClass('active')) {
         $(node).parent().removeClass('active');
@@ -1803,26 +1814,6 @@ $('.service').on('change', e => {
     res();
   }).then(() => updateDocumentValues());
 });
-$('.state').on('click', e => {
-  for (let node of $('.hover-map')) {
-    if ($(node).not(e.target).hasClass('state-active')) {
-      $(node).removeClass('state-active');
-    }
-  }
-  $(e.target).addClass('state-active');
-
-  new Promise(res => {
-    const value = e.target.classList[0].split('--')[1].toLowerCase();
-    res(value);
-  }).then(value => {
-    states.forEach(s => {
-      if (s.Code_state.toLowerCase() === value) {
-        landDeliveryPrice = +s.Price_port;
-      }
-    });
-  }).then(() => updateDocumentValues())
-    .catch(err => console.log(err));
-});
 $('.map-select').on('change', e => {
   new Promise(res => {
     const value = e.target.value.split('--')[1].toLowerCase();
@@ -1831,6 +1822,26 @@ $('.map-select').on('change', e => {
     states.forEach(s => {
       if (s.Code_state.toLowerCase() === value) {
         landDeliveryPrice = +s.Price_port;
+      }
+    });
+
+    $('.select-local-city').html('<option value="default" hidden>Выберите город</option>');
+    cities.forEach(c => {
+      if (c.state.toLowerCase() === value) {
+        $('.select-local-city').append(`<option value="${c.city}">${c.city}</option>`);
+      }
+    });
+  }).then(() => updateDocumentValues())
+    .catch(err => console.log(err));
+});
+$('.select-local-city').on('change', e => {
+  new Promise(res => {
+    const value = e.target.value;
+    res(value);
+  }).then(value => {
+    cities.forEach(c => {
+      if (c.city === value) {
+        cityPrice = +c.price;
       }
     });
   }).then(() => updateDocumentValues())
@@ -1846,15 +1857,27 @@ function updateDocumentValues() {
   $('.customs-sum-display').text(`$${Math.round(customsPrice)}`);
 
   $('.broker-display').text(`$${400 + 200}`);
-  $('.delivery-sum-display').text(`$${Math.round(portDeliveryPrice + landDeliveryPrice + 200 + 400)}`);
-  $('.port-delivery-display').text(`$${Math.round(portDeliveryPrice)}`);
-  $('.land-delivery-display').text(`$${landDeliveryPrice}`);
+  $('.delivery-sum-display').text(`$${Math.round(+categoryPrice +  +portDeliveryPrice + +landDeliveryPrice + +cityPrice + 200 + 400)}`);
+  $('.port-delivery-display').text(`$${Math.round(+categoryPrice + +portDeliveryPrice)}`);
+  $('.land-delivery-display').text(`$${+landDeliveryPrice + +cityPrice}`);
 
   $('.insurance-display').text(`$${insurancePrice.toFixed(2)}`);
   $('.standard').text(`$${standard}`);
   $('.standardPlus').text(`$${standardPlus}`);
   $('.expert').text(`$${expert}`);
-  $('.total-sum-display').text(`$${+carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +portDeliveryPrice + +landDeliveryPrice + 200 + 400 + +service}`);
+  $('.total-sum-display').text(`$${+categoryPrice +  +carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +portDeliveryPrice + +landDeliveryPrice + +cityPrice + 200 + 400 + +service}`);
+
+  // console.log('category',category);
+  // console.log('fuel',fuel);
+  // console.log('carPrice',carPrice);
+  // console.log('carVolume',carVolume);
+  // console.log('carYear',carYear);
+  // console.log('excisePrice',excisePrice);
+  // console.log('dutyPrice',dutyPrice);
+  // console.log('baseRate',baseRate);
+  // console.log('engineCoefficient',engineCoefficient);
+  // console.log('ageCoefficient',ageCoefficient);
+  // console.log('===========');
 
   // console.log('=== CUSTOMS ===');
   // console.log('insurancePrice:', insurancePrice);
@@ -1864,6 +1887,7 @@ function updateDocumentValues() {
   // console.log('ndsPrice:', ndsPrice);
   // console.log('customsPrice:', customsPrice);
   // console.log('=== DELIVERY ===');
+  // console.log('cityPrice:', cityPrice);
   // console.log('landDeliveryPrice:', landDeliveryPrice);
   // console.log('deliveryPrice:', deliveryPrice);
   // console.log('portDeliveryPrice:', portDeliveryPrice);
