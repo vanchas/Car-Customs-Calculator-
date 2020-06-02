@@ -86,10 +86,32 @@ label .input {
 	justify-items: center;
 	justify-content: center;
 }
+.categories-wrap {
+	order: -2;
+	padding: 3em 0 5em 0;
+}
 .cont {
 	width: 50%;
 }
+.cont-wrap {
+	order: -1;
+	height: auto;
+}
+.lot-price {
+	grid-column: span 2;
+}
 @media screen and (max-width: 768px) {
+	.cont-wrap {
+		min-height: 10em;
+    height: fit-content;
+	}
+	.categories-wrap {
+		/* order: -2; */
+		padding: 0;
+	}
+	.lot-price {
+		grid-column: span 1;
+	}
 	.car-images-show {
 		height: 23em;
 	}
@@ -136,8 +158,9 @@ label .input {
 
 /* delivery block */
 .delivery-calculator {
-	box-shadow: 8px 16px 16px rgba(136, 165, 191, 0.6), -8px -4px 16px rgba(255, 255, 255, 0.9);
-	background:#fff;
+	box-shadow: 8px 16px 16px rgba(136, 165, 191, 0.6),
+		-8px -4px 16px rgba(255, 255, 255, 0.9);
+	background: #fff;
 	z-index: 1;
 }
 .delivery-calculator-form {
@@ -165,7 +188,7 @@ label .input {
 	border-radius: 1em;
 	background-color: #fff;
 	top: 65%;
-	right: .5em;
+	right: 0.5em;
 	z-index: 999;
 	display: block;
 }
@@ -185,12 +208,18 @@ label .input {
 	opacity: 0.9;
 }
 .map {
-	padding: 0 1em;
+	padding: 0 5% 2em 5%;
 	width: 100%;
 }
-.select-local-city,
-.map-select {
+.select-local-cityt {
 	margin: 1em 0;
+}
+.map-select {
+	display: none !important;
+}
+.svg {
+	width: 100%;
+	padding-bottom: 1.5em;
 }
 .state:hover {
 	cursor: pointer;
@@ -201,7 +230,7 @@ label .input {
 	opacity: 0.6;
 }
 .port-image {
-	opacity: 0.6;
+	opacity: 0.5;
 }
 .port-image.active {
 	opacity: 1;
@@ -212,7 +241,8 @@ label .input {
 
 /* result-block */
 .result-block {
-	box-shadow: 8px 16px 16px rgba(136, 165, 191, 0.6), -8px -4px 16px rgba(255, 255, 255, 0.9);
+	box-shadow: 8px 16px 16px rgba(136, 165, 191, 0.6),
+		-8px -4px 16px rgba(255, 255, 255, 0.9);
 	background: #fff;
 	z-index: 1;
 }
@@ -227,10 +257,19 @@ label .input {
 	.display-delivery {
 		grid-column: span 1;
 	}
+	.delivery-ports .port p {
+		text-align: center;
+	}
+}
+@media screen and (max-width: 1024px) {
 	.map {
 		padding: 0 1em;
 	}
-	.delivery-ports .port p {
-		text-align: center;
+	.map-select {
+		display: block !important;
+		margin: 1em 0;
+	}
+	.svg {
+		display: none;
 	}
 }

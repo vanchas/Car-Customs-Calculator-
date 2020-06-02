@@ -5372,23 +5372,4 @@
 
 
 
-              // $('.state').on('click', e => {
-//   for (let node of $('.hover-map')) {
-//     if ($(node).not(e.target).hasClass('state-active')) {
-//       $(node).removeClass('state-active');
-//     }
-//   }
-//   $(e.target).addClass('state-active');
-
-//   new Promise(res => {
-//     const value = e.target.classList[0].split('--')[1].toLowerCase();
-//     res(value);
-//   }).then(value => {
-//     states.forEach(s => {
-//       if (s.Code_state.toLowerCase() === value) {
-//         landDeliveryPrice = +s.Price_port;
-//       }
-//     });
-//   }).then(() => updateDocumentValues())
-//     .catch(err => console.log(err));
-// });
+              
