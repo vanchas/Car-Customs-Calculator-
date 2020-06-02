@@ -3,1044 +3,1044 @@ const citiesIAAI = [
     "city": "Birmingham",
     "port": "ga",
     "state": "al",
-    "price": "291"
+    "price": 441
   },
   {
     "city": "Dothan",
     "port": "ga",
     "state": "al",
-    "price": "291"
+    "price": 441
   },
   {
     "city": "Huntsville",
     "port": "ga",
     "state": "al",
-    "price": "291"
+    "price": 441
   },
   {
     "city": "Fayetteville",
     "port": "ga",
     "state": "ar",
-    "price": "461"
+    "price": 611
   },
   {
     "city": "Little Rock",
     "port": "ga",
     "state": "ar",
-    "price": "421"
+    "price": 571
   },
   {
     "city": "Phoenix",
     "port": "ca",
     "state": "az",
-    "price": "560"
+    "price": 710
   },
   {
     "city": "Tucson",
     "port": "ca",
     "state": "az",
-    "price": "570"
+    "price": 720
   },
   {
     "city": "ACE Carson",
     "port": "ca",
     "state": "ca",
-    "price": "420"
+    "price": 570
   },
   {
     "city": "ACE Perris",
     "port": "ca",
     "state": "ca",
-    "price": "583"
+    "price": 733
   },
   {
     "city": "ACE Perris 2",
     "port": "ca",
     "state": "ca",
-    "price": "583"
+    "price": 733
   },
   {
     "city": "Anaheim",
     "port": "ca",
     "state": "ca",
-    "price": "370"
+    "price": 520
   },
   {
     "city": "Colton",
     "port": "ca",
     "state": "ca",
-    "price": "410"
+    "price": 560
   },
   {
     "city": "East Bay",
     "port": "ca",
     "state": "ca",
-    "price": "500"
+    "price": 650
   },
   {
     "city": "Fontana",
     "port": "ca",
     "state": "ca",
-    "price": "360"
+    "price": 510
   },
   {
     "city": "Fremont",
     "port": "ca",
     "state": "ca",
-    "price": "510"
+    "price": 660
   },
   {
     "city": "Fresno",
     "port": "ca",
     "state": "ca",
-    "price": "450"
+    "price": 600
   },
   {
     "city": "High Desert",
     "port": "ca",
     "state": "ca",
-    "price": "460"
+    "price": 610
   },
   {
     "city": "Los Angeles",
     "port": "ca",
     "state": "ca",
-    "price": "320"
+    "price": 470
   },
   {
     "city": "North Hollywood",
     "port": "ca",
     "state": "ca",
-    "price": "415"
+    "price": 565
   },
   {
     "city": "Riverside",
     "port": "ca",
     "state": "ca",
-    "price": "1128"
+    "price": 1278
   },
   {
     "city": "Sacramento",
     "port": "ca",
     "state": "ca",
-    "price": "530"
+    "price": 680
   },
   {
     "city": "San Diego",
     "port": "ca",
     "state": "ca",
-    "price": "400"
+    "price": 550
   },
   {
     "city": "Denver",
     "port": "nj",
     "state": "co",
-    "price": "540"
+    "price": 690
   },
   {
     "city": "Denver East",
     "port": "nj",
     "state": "co",
-    "price": "540"
+    "price": 690
   },
   {
     "city": "Western Colorado",
     "port": "nj",
     "state": "co",
-    "price": "940"
+    "price": 1090
   },
   {
     "city": "Hartford",
     "port": "nj",
     "state": "ct",
-    "price": "210"
+    "price": 360
   },
   {
     "city": "Hartford-South",
     "port": "nj",
     "state": "ct",
-    "price": "210"
+    "price": 360
   },
   {
     "city": "New Castle",
     "port": "nj",
     "state": "de",
-    "price": "274"
+    "price": 424
   },
   {
     "city": "Clearwater",
     "port": "fl",
     "state": "fl",
-    "price": "152"
+    "price": 302
   },
   {
     "city": "Fort Myers",
     "port": "fl",
     "state": "fl",
-    "price": "113"
+    "price": 263
   },
   {
     "city": "Fort Piece",
     "port": "fl",
     "state": "fl",
-    "price": "150"
+    "price": 300
   },
   {
     "city": "Jacksonville",
     "port": "fl",
     "state": "fl",
-    "price": "158"
+    "price": 308
   },
   {
     "city": "Miami",
     "port": "fl",
     "state": "fl",
-    "price": "44"
+    "price": 194
   },
   {
     "city": "Miami-North",
     "port": "fl",
     "state": "fl",
-    "price": "95"
+    "price": 245
   },
   {
     "city": "Orlando",
     "port": "fl",
     "state": "fl",
-    "price": "136"
+    "price": 286
   },
   {
     "city": "Orlando-North",
     "port": "fl",
     "state": "fl",
-    "price": "131"
+    "price": 281
   },
   {
     "city": "Pensacola",
     "port": "fl",
     "state": "fl",
-    "price": "216"
+    "price": 366
   },
   {
     "city": "Tampa",
     "port": "fl",
     "state": "fl",
-    "price": "158"
+    "price": 308
   },
   {
     "city": "Tampa North",
     "port": "fl",
     "state": "fl",
-    "price": "194"
+    "price": 344
   },
   {
     "city": "Atlanta",
     "port": "ga",
     "state": "ga",
-    "price": "161"
+    "price": 311
   },
   {
     "city": "Atlanta East",
     "port": "ga",
     "state": "ga",
-    "price": "161"
+    "price": 311
   },
   {
     "city": "Atlanta North",
     "port": "ga",
     "state": "ga",
-    "price": "161"
+    "price": 311
   },
   {
     "city": "Atlanta South",
     "port": "ga",
     "state": "ga",
-    "price": "161"
+    "price": 311
   },
   {
     "city": "Macon",
     "port": "ga",
     "state": "ga",
-    "price": "161"
+    "price": 311
   },
   {
     "city": "Savannah",
     "port": "ga",
     "state": "ga",
-    "price": "61"
+    "price": 211
   },
   {
     "city": "Tifton",
     "port": "ga",
     "state": "ga",
-    "price": "211"
+    "price": 361
   },
   {
     "city": "Honolulu",
     "port": "ca",
     "state": "hi",
-    "price": "2040"
+    "price": 2190
   },
   {
     "city": "Davenport",
     "port": "nj",
     "state": "ia",
-    "price": "460"
+    "price": 610
   },
   {
     "city": "Des Moines",
     "port": "nj",
     "state": "ia",
-    "price": "590"
+    "price": 740
   },
   {
     "city": "Boise",
     "port": "nj",
     "state": "id",
-    "price": "461"
+    "price": 611
   },
   {
     "city": "Chicago-North",
     "port": "nj",
     "state": "il",
-    "price": "390"
+    "price": 540
   },
   {
     "city": "Chicago-South",
     "port": "nj",
     "state": "il",
-    "price": "415"
+    "price": 565
   },
   {
     "city": "Chicago-West",
     "port": "nj",
     "state": "il",
-    "price": "415"
+    "price": 565
   },
   {
     "city": "Lincoln",
     "port": "nj",
     "state": "il",
-    "price": "590"
+    "price": 740
   },
   {
     "city": "St. Louis",
     "port": "nj",
     "state": "il",
-    "price": "538"
+    "price": 688
   },
   {
     "city": "Fort Wayne",
     "port": "nj",
     "state": "in",
-    "price": "460"
+    "price": 610
   },
   {
     "city": "Indianapolis",
     "port": "nj",
     "state": "in",
-    "price": "390"
+    "price": 540
   },
   {
     "city": "South Bend",
     "port": "nj",
     "state": "in",
-    "price": "410"
+    "price": 560
   },
   {
     "city": "Kansas City",
     "port": "nj",
     "state": "ks",
-    "price": "470"
+    "price": 620
   },
   {
     "city": "Wichita",
     "port": "nj",
     "state": "ks",
-    "price": "520"
+    "price": 670
   },
   {
     "city": "Ashland",
     "port": "nj",
     "state": "ky",
-    "price": "440"
+    "price": 590
   },
   {
     "city": "Bowling Green",
     "port": "ga",
     "state": "ky",
-    "price": "391"
+    "price": 541
   },
   {
     "city": "Lexington",
     "port": "ga",
     "state": "ky",
-    "price": "361"
+    "price": 511
   },
   {
     "city": "Louisville",
     "port": "ga",
     "state": "ky",
-    "price": "391"
+    "price": 541
   },
   {
     "city": "Louisville North",
     "port": "ga",
     "state": "ky",
-    "price": "391"
+    "price": 541
   },
   {
     "city": "Paducah",
     "port": "ga",
     "state": "ky",
-    "price": "541"
+    "price": 691
   },
   {
     "city": "Baton Rouge",
     "port": "ga",
     "state": "la",
-    "price": "341"
+    "price": 491
   },
   {
     "city": "Lafayette",
     "port": "ga",
     "state": "la",
-    "price": "361"
+    "price": 511
   },
   {
     "city": "New Orleans",
     "port": "ga",
     "state": "la",
-    "price": "331"
+    "price": 481
   },
   {
     "city": "New Orleans East",
     "port": "ga",
     "state": "la",
-    "price": "331"
+    "price": 481
   },
   {
     "city": "Shreveport",
     "port": "ga",
     "state": "la",
-    "price": "321"
+    "price": 471
   },
   {
     "city": "Boston - Shirley",
     "port": "nj",
     "state": "ma",
-    "price": "180"
+    "price": 330
   },
   {
     "city": "Taunton",
     "port": "nj",
     "state": "ma",
-    "price": "220"
+    "price": 370
   },
   {
     "city": "Templeton",
     "port": "nj",
     "state": "ma",
-    "price": "345"
+    "price": 495
   },
   {
     "city": "Baltimor",
     "port": "nj",
     "state": "md",
-    "price": "210"
+    "price": 360
   },
   {
     "city": "Dundalk",
     "port": "nj",
     "state": "md",
-    "price": "220"
+    "price": 370
   },
   {
     "city": "Laurel",
     "port": "nj",
     "state": "md",
-    "price": "260"
+    "price": 410
   },
   {
     "city": "Metro DC",
     "port": "nj",
     "state": "md",
-    "price": "240"
+    "price": 390
   },
   {
     "city": "Rosedale",
     "port": "nj",
     "state": "md",
-    "price": "220"
+    "price": 370
   },
   {
     "city": "Portland - Gotham",
     "port": "nj",
     "state": "me",
-    "price": "580"
+    "price": 730
   },
   {
     "city": "Detroit",
     "port": "nj",
     "state": "mi",
-    "price": "390"
+    "price": 540
   },
   {
     "city": "Flint",
     "port": "nj",
     "state": "mi",
-    "price": "430"
+    "price": 580
   },
   {
     "city": "Grand Rapids",
     "port": "nj",
     "state": "mi",
-    "price": "440"
+    "price": 590
   },
   {
     "city": "Grand Lakes",
     "port": "nj",
     "state": "mi",
-    "price": "470"
+    "price": 620
   },
   {
     "city": "Mineapolis / St.Paul",
     "port": "nj",
     "state": "mn",
-    "price": "540"
+    "price": 690
   },
   {
     "city": "Springfield",
     "port": "ga",
     "state": "mo",
-    "price": "431"
+    "price": 581
   },
   {
     "city": "Grenada",
     "port": "ga",
     "state": "ms",
-    "price": "371"
+    "price": 521
   },
   {
     "city": "Gulf Coast",
     "port": "ga",
     "state": "ms",
-    "price": "341"
+    "price": 491
   },
   {
     "city": "Billings",
     "port": "ca",
     "state": "mt",
-    "price": "1228"
+    "price": 1378
   },
   {
     "city": "Missoula",
     "port": "nj",
     "state": "mt",
-    "price": "990"
+    "price": 1140
   },
   {
     "city": "Ashville",
     "port": "ga",
     "state": "nc",
-    "price": "251"
+    "price": 401
   },
   {
     "city": "Charlotte",
     "port": "ga",
     "state": "nc",
-    "price": "191"
+    "price": 341
   },
   {
     "city": "Concord",
     "port": "ga",
     "state": "nc",
-    "price": "241"
+    "price": 391
   },
   {
     "city": "Greensboro",
     "port": "nj",
     "state": "nc",
-    "price": "260"
+    "price": 410
   },
   {
     "city": "Raleigh",
     "port": "nj",
     "state": "nc",
-    "price": "225"
+    "price": 375
   },
   {
     "city": "Wilmington",
     "port": "ga",
     "state": "nc",
-    "price": "211"
+    "price": 361
   },
   {
     "city": "Fargo",
     "port": "nj",
     "state": "nd",
-    "price": "820"
+    "price": 970
   },
   {
     "city": "Omaha",
     "port": "nj",
     "state": "ne",
-    "price": "540"
+    "price": 690
   },
   {
     "city": "Manchester",
     "port": "nj",
     "state": "nh",
-    "price": "300"
+    "price": 450
   },
   {
     "city": "Avenel New Jersey",
     "port": "nj",
     "state": "nj",
-    "price": "154"
+    "price": 304
   },
   {
     "city": "Central New Jersey",
     "port": "nj",
     "state": "nj",
-    "price": "80"
+    "price": 230
   },
   {
     "city": "Northern New Jersey",
     "port": "nj",
     "state": "nj",
-    "price": "170"
+    "price": 320
   },
   {
     "city": "Southern New Jersey",
     "port": "nj",
     "state": "nj",
-    "price": "130"
+    "price": 280
   },
   {
     "city": "Albuquerque",
     "port": "tx",
     "state": "nm",
-    "price": "541"
+    "price": 691
   },
   {
     "city": "Las Vegas",
     "port": "ca",
     "state": "nv",
-    "price": "560"
+    "price": 710
   },
   {
     "city": "Reno",
     "port": "ca",
     "state": "nv",
-    "price": "620"
+    "price": 770
   },
   {
     "city": "Albany",
     "port": "nj",
     "state": "ny",
-    "price": "220"
+    "price": 370
   },
   {
     "city": "Buffalo",
     "port": "nj",
     "state": "ny",
-    "price": "340"
+    "price": 490
   },
   {
     "city": "Long Island",
     "port": "nj",
     "state": "ny",
-    "price": "240"
+    "price": 390
   },
   {
     "city": "Newburgh",
     "port": "nj",
     "state": "ny",
-    "price": "190"
+    "price": 340
   },
   {
     "city": "Rochester",
     "port": "nj",
     "state": "ny",
-    "price": "410"
+    "price": 560
   },
   {
     "city": "Syracuse",
     "port": "nj",
     "state": "ny",
-    "price": "327"
+    "price": 477
   },
   {
     "city": "Acron-Canton",
     "port": "nj",
     "state": "oh",
-    "price": "470"
+    "price": 620
   },
   {
     "city": "Cincinnati",
     "port": "nj",
     "state": "oh",
-    "price": "390"
+    "price": 540
   },
   {
     "city": "Cleverland",
     "port": "nj",
     "state": "oh",
-    "price": "360"
+    "price": 510
   },
   {
     "city": "Columbus",
     "port": "nj",
     "state": "oh",
-    "price": "370"
+    "price": 520
   },
   {
     "city": "Dayton",
     "port": "nj",
     "state": "oh",
-    "price": "410"
+    "price": 560
   },
   {
     "city": "Oklahoma City",
     "port": "tx",
     "state": "ok",
-    "price": "584"
+    "price": 734
   },
   {
     "city": "Tulsa",
     "port": "ga",
     "state": "ok",
-    "price": "388"
+    "price": 538
   },
   {
     "city": "Eugene",
     "port": "ca",
     "state": "or",
-    "price": "710"
+    "price": 860
   },
   {
     "city": "Portland",
     "port": "ca",
     "state": "or",
-    "price": "710"
+    "price": 860
   },
   {
     "city": "Portland West",
     "port": "ca",
     "state": "or",
-    "price": "660"
+    "price": 810
   },
   {
     "city": "Altona",
     "port": "nj",
     "state": "pa",
-    "price": "310"
+    "price": 460
   },
   {
     "city": "Bridgeport",
     "port": "nj",
     "state": "pa",
-    "price": "240"
+    "price": 390
   },
   {
     "city": "Erie",
     "port": "nj",
     "state": "pa",
-    "price": "410"
+    "price": 560
   },
   {
     "city": "Philadelphia",
     "port": "nj",
     "state": "pa",
-    "price": "160"
+    "price": 310
   },
   {
     "city": "Philadelphia East",
     "port": "nj",
     "state": "pa",
-    "price": "210"
+    "price": 360
   },
   {
     "city": "Pittsburg",
     "port": "nj",
     "state": "pa",
-    "price": "320"
+    "price": 470
   },
   {
     "city": "Pittsburg-North",
     "port": "nj",
     "state": "pa",
-    "price": "320"
+    "price": 470
   },
   {
     "city": "Scranton",
     "port": "nj",
     "state": "pa",
-    "price": "190"
+    "price": 340
   },
   {
     "city": "York Springs",
     "port": "nj",
     "state": "pa",
-    "price": "210"
+    "price": 360
   },
   {
     "city": "Providence",
     "port": "nj",
     "state": "ri",
-    "price": "260"
+    "price": 410
   },
   {
     "city": "Charleston",
     "port": "ga",
     "state": "sc",
-    "price": "161"
+    "price": 311
   },
   {
     "city": "Columbia",
     "port": "ga",
     "state": "sc",
-    "price": "243"
+    "price": 393
   },
   {
     "city": "Greenville",
     "port": "ga",
     "state": "sc",
-    "price": "261"
+    "price": 411
   },
   {
     "city": "Lexington",
     "port": "ga",
     "state": "sc",
-    "price": "323"
+    "price": 473
   },
   {
     "city": "Sioux Falls",
     "port": "nj",
     "state": "sd",
-    "price": "760"
+    "price": 910
   },
   {
     "city": "Chattanooga",
     "port": "nj",
     "state": "tn",
-    "price": "420"
+    "price": 570
   },
   {
     "city": "Knoxville",
     "port": "nj",
     "state": "tn",
-    "price": "420"
+    "price": 570
   },
   {
     "city": "Memphis",
     "port": "ga",
     "state": "tn",
-    "price": "371"
+    "price": 521
   },
   {
     "city": "Nashville",
     "port": "ga",
     "state": "tn",
-    "price": "321"
+    "price": 471
   },
   {
     "city": "Abilene",
     "port": "tx",
     "state": "tx",
-    "price": "471"
+    "price": 621
   },
   {
     "city": "Amarillo",
     "port": "tx",
     "state": "tx",
-    "price": "511"
+    "price": 661
   },
   {
     "city": "Austin",
     "port": "tx",
     "state": "tx",
-    "price": "341"
+    "price": 491
   },
   {
     "city": "Corpus Christi",
     "port": "tx",
     "state": "tx",
-    "price": "391"
+    "price": 541
   },
   {
     "city": "Dallas",
     "port": "tx",
     "state": "tx",
-    "price": "341"
+    "price": 491
   },
   {
     "city": "Dalls / Ft. Worth",
     "port": "tx",
     "state": "tx",
-    "price": "361"
+    "price": 511
   },
   {
     "city": "El Paso",
     "port": "tx",
     "state": "tx",
-    "price": "491"
+    "price": 641
   },
   {
     "city": "Fort Worth North",
     "port": "tx",
     "state": "tx",
-    "price": "282"
+    "price": 432
   },
   {
     "city": "Houston",
     "port": "tx",
     "state": "tx",
-    "price": "211"
+    "price": 361
   },
   {
     "city": "Houston South",
     "port": "tx",
     "state": "tx",
-    "price": "329"
+    "price": 479
   },
   {
     "city": "Houston North",
     "port": "tx",
     "state": "tx",
-    "price": "241"
+    "price": 391
   },
   {
     "city": "Longview",
     "port": "tx",
     "state": "tx",
-    "price": "361"
+    "price": 511
   },
   {
     "city": "Lubbock",
     "port": "tx",
     "state": "tx",
-    "price": "561"
+    "price": 711
   },
   {
     "city": "McAllen",
     "port": "tx",
     "state": "tx",
-    "price": "361"
+    "price": 511
   },
   {
     "city": "Permian Basin",
     "port": "tx",
     "state": "tx",
-    "price": "491"
+    "price": 641
   },
   {
     "city": "San Antonio",
     "port": "tx",
     "state": "tx",
-    "price": "391"
+    "price": 541
   },
   {
     "city": "San Antonio South",
     "port": "tx",
     "state": "tx",
-    "price": "361"
+    "price": 511
   },
   {
     "city": "Salt Lake City",
     "port": "ca",
     "state": "ut",
-    "price": "660"
+    "price": 810
   },
   {
     "city": "Culpeper",
     "port": "nj",
     "state": "va",
-    "price": "360"
+    "price": 510
   },
   {
     "city": "Fredericksburg South",
     "port": "nj",
     "state": "va",
-    "price": "220"
+    "price": 370
   },
   {
     "city": "Northern Virginia",
     "port": "nj",
     "state": "va",
-    "price": "296"
+    "price": 446
   },
   {
     "city": "Pulaski",
     "port": "nj",
     "state": "va",
-    "price": "284"
+    "price": 434
   },
   {
     "city": "Richmond",
     "port": "nj",
     "state": "va",
-    "price": "260"
+    "price": 410
   },
   {
     "city": "Roanoke",
     "port": "nj",
     "state": "va",
-    "price": "400"
+    "price": 550
   },
   {
     "city": "Suffolk",
     "port": "nj",
     "state": "va",
-    "price": "291"
+    "price": 441
   },
   {
     "city": "Tidewater",
     "port": "nj",
     "state": "va",
-    "price": "320"
+    "price": 470
   },
   {
     "city": "Burlington",
     "port": "nj",
     "state": "vt",
-    "price": "390"
+    "price": 540
   },
   {
     "city": "Seattle",
     "port": "ca",
     "state": "wa",
-    "price": "852"
+    "price": 1002
   },
   {
     "city": "Appleton",
     "port": "nj",
     "state": "wi",
-    "price": "580"
+    "price": 730
   },
   {
     "city": "IAA Ignite Auction Portage",
     "port": "nj",
     "state": "wi",
-    "price": "549"
+    "price": 699
   },
   {
     "city": "Milwaukee",
     "port": "nj",
     "state": "wi",
-    "price": "410"
+    "price": 560
   },
   {
     "city": "Buckhannon",
     "port": "nj",
     "state": "wv",
-    "price": "477"
+    "price": 627
   },
   {
     "city": "Casper",
     "port": "nj",
     "state": "wy",
-    "price": "1099"
-  },
+    "price": 1249
+  }
 ];

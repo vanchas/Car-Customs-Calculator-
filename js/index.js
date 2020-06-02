@@ -29,7 +29,6 @@ let categoryPrice = 0;
 let landState = '';
 
 let customsPrice = 0;
-let deliveryPrice = 0;
 let portDeliveryPrice = 0;
 let portCommitionPrice = 250;
 let insurancePrice = carPrice * 0.009;
@@ -60,6 +59,14 @@ function stateSelectOptionsRender() {
   }
 }
 
+function portDeliveryPriceCount() {
+  if (carPrice > 0) {
+    (port === 'ukr')
+      ? portCommitionPrice = 450
+      : portCommitionPrice = 250;
+  }
+}
+
 function deliveryPriceCount() {
   if (carPrice > 0) {
     states.forEach(st => {
@@ -67,9 +74,6 @@ function deliveryPriceCount() {
         portDeliveryPrice = +st.Price_port;
       }
     });
-    (port === 'ukr')
-      ? portCommitionPrice = 450
-      : portCommitionPrice = 250;
   }
 }
 $('.big-car-image').css('padding', '3em 0');
@@ -316,7 +320,6 @@ $('#price').on('input', e => {
     service = 500;
     res();
   }).then(() => countAuctionPrice())
-    // .then(() => deliveryPriceCount())
     .then(() => updateDocumentValues())
 });
 $('#volume').on('input', e => {
@@ -378,7 +381,7 @@ $('.port img').on('click', e => {
     }
     $(e.target).addClass('active');
   })
-    .then(() => deliveryPriceCount())
+    .then(() => portDeliveryPriceCount())
     .then(() => updateDocumentValues())
 });
 $('.category').on('change', e => {
@@ -519,8 +522,9 @@ function updateDocumentValues() {
   // console.log('insurancePrice:', insurancePrice);
   // console.log('cityPrice:', cityPrice);
   // console.log('landDeliveryPrice:', landDeliveryPrice);
-  // console.log('deliveryPrice:', deliveryPrice);
   // console.log('portDeliveryPrice:', portDeliveryPrice);
   // console.log('portCommitionPrice:', portCommitionPrice);
+  // console.log('categoryPrice:', categoryPrice);
+  // console.log('300:', 300);
   // console.log('Итоговая стоимость со всем платежами:', +carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +portDeliveryPrice + +landDeliveryPrice + 200 + 400 + +service);
 }
