@@ -2,6 +2,11 @@ body {
 	background-color: rgb(240, 240, 240, 0.75) !important;
 }
 
+path {
+	user-select: none !important;
+	z-index: -1;
+}
+
 .calculator-wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
