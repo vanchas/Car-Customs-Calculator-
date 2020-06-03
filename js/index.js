@@ -1,3 +1,4 @@
+
 const gasolineUrl = './images/customs/mercedes.png';
 const dieselUrl = './images/customs/cruiser.png';
 const hybridUrl = './images/customs/toyota.png';
@@ -9,7 +10,7 @@ const cont2 = './images/delivery/cont2.jpg';
 let fuel = '';
 let auction = 'iaai';
 let carYear = 0;
-let realCarPrice = 0;
+let price = 0;
 let carPrice = 0;
 let carVolume = 0;
 
@@ -22,6 +23,7 @@ let baseRate = 0;
 let engineCoefficient = 0;
 let ageCoefficient = 0;
 
+let city = '';
 let state = 'FL';
 let port = 'lit';
 let category = 1;
@@ -29,8 +31,8 @@ let categoryPrice = 0;
 let landState = '';
 
 let customsPrice = 0;
-let portDeliveryPrice = 0;
-let portCommitionPrice = 250;
+let deliveryPrice = 0;
+let portUnloadingPrice = 0;
 let insurancePrice = carPrice * 0.009;
 let landDeliveryPrice = 0;
 
@@ -38,42 +40,34 @@ let standard = 500;
 let standardPlus = 600;
 let expert = 300;
 let service = 0;
-
 let cityPrice = 0;
 
-function stateSelectOptionsRender() {
-  if (auction === 'copart') {
-    $('.select-local-city').html('<option value="default" hidden>Выберите город</option>');
-    return citiesCopart.forEach(c => {
-      if (c.state.toLowerCase() === state.toLowerCase()) {
-        return $('.select-local-city').append(`<option value="${c.city}">${c.city}</option>`);
+function cityOptionRender() {
+  $('.select-local-city').html('<option value="default" hidden>Выберите город</option>');
+  if (auction === 'iaai') {
+    cities.forEach(city => {
+      if (city.auction === 'iaai' && city.state.toLowerCase() === state) {
+        $('.select-local-city').append(`<option value="${city.city}">${city.city}</option>`);
       }
     });
-  } else {
-    $('.select-local-city').html('<option value="default" hidden>Выберите город</option>');
-    return citiesIAAI.forEach(c => {
-      if (c.state.toLowerCase() === state.toLowerCase()) {
-        return $('.select-local-city').append(`<option value="${c.city}">${c.city}</option>`);
+  } else if (auction === 'copart') {
+    cities.forEach(city => {
+      if (city.auction === 'copart' && city.state.toLowerCase() === state) {
+        $('.select-local-city').append(`<option value="${city.city}">${city.city}</option>`);
       }
     });
-  }
-}
-
-function portDeliveryPriceCount() {
-  if (carPrice > 0) {
-    (port === 'ukr')
-      ? portCommitionPrice = 450
-      : portCommitionPrice = 250;
   }
 }
 
 function deliveryPriceCount() {
   if (carPrice > 0) {
-    states.forEach(st => {
-      if (st.Code_state.toLowerCase() === state.toLowerCase()) {
-        portDeliveryPrice = +st.Price_port;
-      }
-    });
+    if (port === 'ukr') {
+      portUnloadingPrice = 450;
+      deliveryPrice = 300 + 100;
+    } else if (port === 'lit') {
+      portUnloadingPrice = 250;
+      deliveryPrice = 300 + 100;
+    }
   }
 }
 $('.big-car-image').css('padding', '3em 0');
@@ -309,7 +303,7 @@ $('#year').on('input', e => {
 });
 $('#price').on('input', e => {
   new Promise(res => {
-    realCarPrice = +e.target.value;
+    price = +e.target.value;
     carPrice = +e.target.value + +auctionPrice + 400;
     dutyPrice = +e.target.value * 0.1;
     excisePrice = baseRate * +engineCoefficient * +ageCoefficient;
@@ -320,6 +314,7 @@ $('#price').on('input', e => {
     service = 500;
     res();
   }).then(() => countAuctionPrice())
+    .then(() => deliveryPriceCount())
     .then(() => updateDocumentValues())
 });
 $('#volume').on('input', e => {
@@ -364,11 +359,10 @@ $('.auction').on('change', e => {
     }
     $(e.target).parent().addClass('active');
     res();
-  }).then(() => countAuctionPrice())
-    .then(() => stateSelectOptionsRender())
+  }).then(() => cityOptionRender())
+    .then(() => countAuctionPrice())
     .then(() => updateDocumentValues());
 });
-$('#lithuania img').addClass('active');
 $('.port img').on('click', e => {
   new Promise(res => {
     port = $(e.target).attr('data');
@@ -380,8 +374,7 @@ $('.port img').on('click', e => {
       }
     }
     $(e.target).addClass('active');
-  })
-    .then(() => portDeliveryPriceCount())
+  }).then(() => deliveryPriceCount())
     .then(() => updateDocumentValues())
 });
 $('.category').on('change', e => {
@@ -411,9 +404,29 @@ $('.category').on('change', e => {
     }
     $(e.target).parent().addClass('active');
     res();
-  })
-    .then(() => deliveryPriceCount())
+  }).then(() => deliveryPriceCount())
     .then(() => updateDocumentValues())
+});
+$('.service').on('change', e => {
+  new Promise(res => {
+    service = +e.target.value;
+    res();
+  }).then(() => updateDocumentValues());
+});
+$('.map-select').on('change', e => {
+  new Promise(res => {
+    const value = e.target.value.split('--')[1].toLowerCase();
+    state = value;
+    res(value);
+  }).then(value => {
+    cityOptionRender();
+    states.forEach(s => {
+      if (s.Code_state.toLowerCase() === value) {
+        landDeliveryPrice = +s.Price_port;
+      }
+    });
+  }).then(() => updateDocumentValues())
+    .catch(err => console.log(err));
 });
 $('.state').on('click', e => {
   for (let node of $('.hover-map')) {
@@ -433,30 +446,7 @@ $('.state').on('click', e => {
         landDeliveryPrice = +s.Price_port;
       }
     });
-    stateSelectOptionsRender();
-  }).then(() => deliveryPriceCount())
-    .then(() => updateDocumentValues())
-    .catch(err => console.log(err));
-});
-$('.service').on('change', e => {
-  new Promise(res => {
-    service = +e.target.value;
-    res();
-  }).then(() => updateDocumentValues());
-});
-$('.map-select').on('change', e => {
-  new Promise(res => {
-    const value = e.target.value.split('--')[1].toLowerCase();
-    state = value;
-    res(value);
-  }).then(value => {
-    states.forEach(s => {
-      if (s.Code_state.toLowerCase() === value) {
-        landDeliveryPrice = +s.Price_port;
-      }
-    });
-    stateSelectOptionsRender();
-  }).then(() => deliveryPriceCount())
+  }).then(() => cityOptionRender())
     .then(() => updateDocumentValues())
     .catch(err => console.log(err));
 });
@@ -465,40 +455,32 @@ $('.select-local-city').on('change', e => {
     const value = e.target.value;
     res(value);
   }).then(value => {
-    if (auction === 'copart') {
-      citiesCopart.forEach(c => {
-        if (c.city === value) {
-          cityPrice = +c.price;
-        }
-      });
-    } else {
-      citiesIAAI.forEach(c => {
-        if (c.city === value) {
-          cityPrice = +c.price;
-        }
-      });
-    }
+    cities.forEach(city => {
+      if (city.city === value) {
+        cityPrice = +city.price;
+      }
+    });
   }).then(() => updateDocumentValues())
     .catch(err => console.log(err));
 });
 
 function updateDocumentValues() {
-  $('.price-display').text(`$${realCarPrice}`);
+  $('.price-display').text(`$${price}`);
   $('.auction-display').text(`$${Math.round(auctionPrice)}`);
   $('.excise-display').text(`$${Math.round(excisePrice)}`);
   $('.duty-display').text(`$${Math.round(dutyPrice)}`);
   $('.nds-display').text(`$${Math.round(ndsPrice)}`);
   $('.customs-sum-display').text(`$${Math.round(customsPrice)}`);
 
-  $('.broker-display').text(`$${200 + portCommitionPrice}`);
-  $('.delivery-sum-display').text(`$${Math.round(+categoryPrice + +portDeliveryPrice + +portCommitionPrice + +landDeliveryPrice + +cityPrice + +insurancePrice + 200 + 300)}`);
-  $('.port-delivery-display').text(`$${+categoryPrice + +portDeliveryPrice + +landDeliveryPrice + +cityPrice + Math.round(+insurancePrice) + 300}`);
+  $('.delivery-display').text(`$${Math.round(+insurancePrice + +cityPrice + +landDeliveryPrice + +deliveryPrice)}`);
+  $('.broker-display').text(`$${+portUnloadingPrice + 200}`);
+  $('.delivery-sum-display').text(`$${Math.round(+categoryPrice + +insurancePrice + +cityPrice + +landDeliveryPrice + +deliveryPrice + +portUnloadingPrice + 200)}`);
 
-  $('.insurance-display').text(`$${Math.round(insurancePrice)}`);
+  $('.insurance-display').text(`$${insurancePrice.toFixed(2)}`);
   $('.standard').text(`$${standard}`);
   $('.standardPlus').text(`$${standardPlus}`);
   $('.expert').text(`$${expert}`);
-  $('.total-sum-display').text(`$${Math.round(+categoryPrice + +carPrice + +customsPrice + +auctionPrice + +insurancePrice + +portDeliveryPrice + +portCommitionPrice + +landDeliveryPrice + +cityPrice + 200 + 300 + +service)}`);
+  $('.total-sum-display').text(`$${Math.round(+customsPrice + +auctionPrice +price + +categoryPrice + +insurancePrice + +cityPrice + +landDeliveryPrice + +deliveryPrice + +portUnloadingPrice + 200 +service)}`);
 
   // console.log('category',category);
   // console.log('fuel',fuel);
@@ -513,18 +495,20 @@ function updateDocumentValues() {
   // console.log('===========');
 
   // console.log('=== CUSTOMS ===');
+  // console.log('insurancePrice:', insurancePrice);
   // console.log('auctionPrice:', auctionPrice);
   // console.log('excisePrice:', excisePrice);
   // console.log('dutyPrice:', dutyPrice);
   // console.log('ndsPrice:', ndsPrice);
   // console.log('customsPrice:', customsPrice);
   // console.log('=== DELIVERY ===');
-  // console.log('insurancePrice:', insurancePrice);
+  // console.log('categoryPrice:', categoryPrice);
   // console.log('cityPrice:', cityPrice);
   // console.log('landDeliveryPrice:', landDeliveryPrice);
-  // console.log('portDeliveryPrice:', portDeliveryPrice);
-  // console.log('portCommitionPrice:', portCommitionPrice);
-  // console.log('categoryPrice:', categoryPrice);
-  // console.log('300:', 300);
-  // console.log('Итоговая стоимость со всем платежами:', +carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +portDeliveryPrice + +landDeliveryPrice + 200 + 400 + +service);
+  // console.log('deliveryPrice:', deliveryPrice);
+  // console.log('insurancePrice:', insurancePrice);
+  // console.log('portUnloadingPrice:', portUnloadingPrice);
+  // console.log('broker:', 200);
+
+  // console.log('Итоговая стоимость со всем платежами:', +carPrice + +customsPrice + +auctionPrice + +insurancePrice.toFixed(2) + +landDeliveryPrice + 200 + 400 + +service);
 }

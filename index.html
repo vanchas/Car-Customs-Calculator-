@@ -72,13 +72,16 @@
             <input type="text" name="price" id="price" class="form-control mt-2 bg-light input" placeholder="$10000">
           </label>
           <label for="volume" class="form-group text-center h6">Объем ДВС / аккум-pa:
-            <input type="text" name="volume" id="volume" class="form-control mt-2 bg-light input"
-              placeholder="л / кВтч">
+            <input type="text" name="volume" id="volume" class="form-control mt-2 bg-light input" placeholder="л / кВтч">
           </label>
         </div>
       </form>
 
       <div class="display col-12 p-0">
+        <div class="display-item px-3">
+          <span>Стоимость лота:</span>
+          <span class="price-display">$0</span>
+        </div>
         <div class="display-item px-3">
           <span>Сборы аукциона:</span>
           <span class="auction-display">$0</span>
@@ -91,16 +94,11 @@
           <span>Пошлина:</span>
           <span class="duty-display">$0</span>
         </div>
-        <div class="display-item px-3">
+        <div class="display-item px-3 border-0">
           <span>НДС:</span>
           <span class="nds-display">$0</span>
         </div>
-        <div class="display-item lot-price px-3">
-          <span>Стоимость лота:</span>
-          <span class="price-display">$0</span>
-        </div>
-        <div
-          class="font-weight-bold display-item px-3 display-item-last text-center col-12 bg-blue pt-3 pb-4 h4 m-0 border-0">
+        <div class="font-weight-bold display-item px-3 display-item-last text-center col-12 bg-blue pt-3 pb-4 h4 m-0 border-0">
           <span>Сумма таможенных платежей:</span>
           <span class="customs-sum-display">$0</span>
         </div>
@@ -111,7 +109,7 @@
     <div class="delivery-calculator">
       <h2 class="text-center col-12 bg-blue pt-3 pb-4 my-4">КАЛЬКУЛЯТОР ДОСТАВКИ</h2>
       <form class="from-group delivery-calculator-form">
-        <div class="categories-wrap">
+        <div class="categories-control-block">
           <h5 class="text-center">Кузов:</h5>
           <div class="categories-buttons-group">
             <label class="form-group label active">
@@ -128,6 +126,7 @@
         <div class="map">
           <h5 class="text-center">Штат аукциона:</h5>
 
+          
           <!-- START OF THE MAP -->
           <svg viewBox="0 0 1045 641" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" class="svg">
@@ -4862,7 +4861,6 @@
           <select class="map-select form-control">
             <option value="default" hidden>Выберите штат</option>
             <option value="outline--AL">Alabama</option>
-            <!-- <option value="outline--AK">Alaska</option> -->
             <option value="outline--AZ">Arizona</option>
             <option value="outline--AR">Arkansas</option>
             <option value="outline--CA">California</option>
@@ -4913,6 +4911,7 @@
             <option value="outline--WI">Wisconsin</option>
             <option value="outline--WY">Wyoming</option>
           </select>
+
           <h5 class="text-center">Город отправки:</h5>
           <div class="usa-cities-block">
             <select class="form-control select-local-city">
@@ -4921,7 +4920,7 @@
           </div>
         </div>
 
-        <div class="cont-wrap">
+        <div class="categories-image-block">
           <img src="./images/delivery/cont.png" alt="container" class="mx-auto cont d-block">
         </div>
 
@@ -4940,18 +4939,13 @@
         <div class="display display-delivery">
           <div class="display-item px-3">
             <span>Доставка в порт назначения</span>
-            <span class="port-delivery-display">$0</span>
+            <span class="delivery-display">$0</span>
           </div>
-          <!-- <div class="display-item px-3">
-            <span>Сухопутная доставка</span>
-            <span class="land-delivery-display">$0</span>
-          </div> -->
           <div class="display-item px-3">
             <span>Экспедирование + Брокер</span>
             <span class="broker-display">$0</span>
           </div>
-          <div
-            class="font-weight-bold display-item px-3 display-item-last text-center bg-blue pt-3 pb-4 h4 m-0 border-0">
+          <div class="font-weight-bold display-item px-3 display-item-last text-center bg-blue pt-3 pb-4 h4 m-0 border-0">
             <span>Стоимость доставки</span>
             <span class="delivery-sum-display">$0</span>
           </div>
@@ -5013,8 +5007,7 @@
     </div>
   </div>
 
-  <script src="./js/citiesCopart.js"></script>
-  <script src="./js/citiesIAAI.js"></script>
+  <script src="./js/cities.js"></script>
   <script src="./js/states.js"></script>
   <script src="./js/index.js"></script>
 </body>

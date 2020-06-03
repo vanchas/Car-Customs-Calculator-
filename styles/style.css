@@ -86,32 +86,10 @@ label .input {
 	justify-items: center;
 	justify-content: center;
 }
-.categories-wrap {
-	order: -2;
-	padding: 3em 0 5em 0;
-}
 .cont {
 	width: 50%;
 }
-.cont-wrap {
-	order: -1;
-	height: auto;
-}
-.lot-price {
-	grid-column: span 2;
-}
 @media screen and (max-width: 768px) {
-	.cont-wrap {
-		min-height: 10em;
-    height: fit-content;
-	}
-	.categories-wrap {
-		/* order: -2; */
-		padding: 0;
-	}
-	.lot-price {
-		grid-column: span 1;
-	}
 	.car-images-show {
 		height: 23em;
 	}
@@ -204,22 +182,32 @@ label .input {
 .display-delivery {
 	grid-column: span 2;
 }
+.categories-control-block {
+	order: -2;
+	padding-bottom: 4em;
+	padding-top: 1em;
+}
+.categories-image-block {
+	order: -1;
+	height: auto;
+	min-height: 16em;
+}
 .cont {
 	opacity: 0.9;
 }
 .map {
-	padding: 0 5% 2em 5%;
+	padding: 0 1em;
 	width: 100%;
 }
-.select-local-cityt {
+.select-local-city,
+.map-select {
 	margin: 1em 0;
 }
 .map-select {
 	display: none !important;
 }
 .svg {
-	width: 100%;
-	padding-bottom: 1.5em;
+	display: block;
 }
 .state:hover {
 	cursor: pointer;
@@ -247,7 +235,23 @@ label .input {
 	z-index: 1;
 }
 
+@media screen and (max-width: 850px) {
+	.map-select {
+		display: block !important;
+	}
+	.svg {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 768px) {
+	.categories-control-block {
+		padding: 0;
+	}
+	.categories-image-block {
+		height: 20em;
+		min-height: auto;
+	}
 	.delivery-calculator-form {
 		grid-template-columns: 1fr !important;
 	}
@@ -257,19 +261,25 @@ label .input {
 	.display-delivery {
 		grid-column: span 1;
 	}
+	.map {
+		padding: 0 1em;
+	}
 	.delivery-ports .port p {
 		text-align: center;
 	}
 }
-@media screen and (max-width: 1024px) {
-	.map {
-		padding: 0 1em;
+@media screen and (max-width: 600px) {
+	.categories-image-block {
+		height: 16em;
 	}
-	.map-select {
-		display: block !important;
-		margin: 1em 0;
+}
+@media screen and (max-width: 500px) {
+	.categories-image-block {
+		height: 12em;
 	}
-	.svg {
-		display: none;
+}
+@media screen and (max-width: 400px) {
+	.categories-image-block {
+		height: 10em;
 	}
 }
