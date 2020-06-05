@@ -457,7 +457,9 @@ $('.select-local-city').on('change', e => {
   }).then(value => {
     cities.forEach(city => {
       if (city.city === value) {
-        cityPrice = +city.price;
+        if (city.auction === auction) {
+          cityPrice = +city.price;
+        }
       }
     });
   }).then(() => updateDocumentValues())

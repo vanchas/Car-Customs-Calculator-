@@ -147,7 +147,7 @@ const states = [
   {
     "Code_state": "MT",
     "Name_state": "Montana",
-    "Price_port": "850",
+    "Price_port": "500",
     "Port": "SEA"
   },
   {
